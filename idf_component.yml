@@ -1,0 +1,6 @@
+version: "1.0.0"
+description: "ratpak arbitrary-precision rational arithmetic from Microsoft Calculator, ported to ESP32"
+url: "https://github.com/microsoft/calculator"
+license: "MIT"
+dependencies:
+  idf: ">=5.0"
