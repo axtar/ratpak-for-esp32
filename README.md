@@ -1,8 +1,8 @@
 # ratpak for ESP32
 
-ratpak is the arbitrary-precision rational arithmetic library of [Microsoft Calculator](https://github.com/microsoft/calculator) (`src/CalcManager/Ratpack`), packaged as an ESP-IDF component.
+ratpak for esp32 is the arbitrary-precision rational arithmetic library of [Microsoft Calculator](https://github.com/microsoft/calculator) (`src/CalcManager/Ratpack`), packaged as an ESP-IDF component.
 
-The sources are kept as close to upstream as possible. Every change is listed below, and every non-mechanical change is marked in the code with an `ESP32 port:` comment.
+I initially ported the library manually for use in my Nixie Calculator project. In the process, I fixed several memory leaks and calculation errors, but also made some unnecessary changes. The goal of this new, **AI-assisted** port was to stay closer to the original source code while keeping my fixes and additions. Change are listed below, and non-mechanical changes are marked in the code with an `ESP32 port:` comment.
 
 - Upstream base: microsoft/calculator `d125246` (2026-09-28). The last upstream ratpak commit included is `ffd0519` (2025-12-23).
 - License: MIT, see [LICENSE](LICENSE) (Microsoft's original license). The ESP32 changes are released under the same license.
