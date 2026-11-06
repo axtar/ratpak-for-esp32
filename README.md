@@ -86,7 +86,8 @@ Upstream handles negative powers by calling itself with `-power`. For `INT32_MIN
 
 ### 6. Zero-snapping threshold (`rat.cpp`, `_snaprat`)
 
-Upstream snaps a result to 0 if |r| < max(|a|, |b|) · 10^−precision. For large inputs that threshold is large: at precision 32, `lograt(1e40)` has a threshold of 1e8 and the correct result 92.1 is snapped to 0. The port additionally requires |r| < 10^−precision. Tiny residues (√2.25 − 1.5) are still snapped, real results never are.
+Upstream snaps a result to 0 if |r| < max(|a|, |b|) · 10^−precision. For large inputs that threshold is large: at precision 32, `lograt(1e40)` has a threshold of 1e8 and the correct result 92.1 is snapped to 0.<br>
+The port additionally requires |r| < 10^−precision. This fix was added due to calculations such as (10^100) + 1 - (10^100), in which the original _snaprat also fails.
 
 ### 7. `NumberToString` (`conv.cpp`)
 
